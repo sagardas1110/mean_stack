@@ -1,0 +1,103 @@
+<div class="container">
+<div>
+<form>
+  <h1>Search Movies</h1>
+  <br>
+
+  <p>Movie Name</p>
+  <input ng-model="Title" type="text"  placeholder="Movie Name"/>  <br><br>
+
+  <p>Year</p>
+  <input ng-model="Year"  type="number"  placeholder="Year"/>
+  <br><br>
+
+  <button type="button" ng-click="searchMovie()" class="btn btn-primary">Add Movie</button>
+</form>
+</div>
+
+
+
+
+
+<br><br>
+
+
+  
+<div class="row">
+	<div class="col-md-12">
+
+<h1>Add Movies</h1>
+
+<table class="table table-striped">
+
+   <thead>
+     <tr>
+     	<th>Title</th>
+     	<th>Year</th>
+     	<th>RunTime</th>
+     	<th>Director</th>
+     	<th>Language</th>
+     	<th>Poster</th>
+     </tr>
+   </thead>
+
+
+   <tbody>
+     
+   	<tr>
+     	<td>	{{movieData.data.Title}}     </td>
+     	<td>	{{movieData.data.Year}}	    </td>
+     	<td>	{{movieData.data.Runtime}}	</td>
+     	<td>	{{movieData.data.Director}}  </td>
+     	<td>	{{movieData.data.Language}}  </td>
+     	<td><img src={{movieData.data.Poster}} alt="MoviePoster" style="height:100px;width:100px;">    </td>
+  		<td>
+  		<button type="button" ng-click="addmovie()" class="btn btn-primary">Add Movie</button>
+     </td>
+     </tr>
+   </tbody>
+
+</table>
+</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-12">
+ <h4><b>Select Language : </b><input type="text" ng-model="test"/> </h4> 	
+	
+<h1>Show Movies</h1>
+
+<table class="table table-striped">
+
+   <thead>
+     <tr>
+     	<th>Title</th>
+     	<th>Year</th>
+     	<th>RunTime</th>
+     	<th>Director</th>
+     	<th>Language</th>
+     	<th>Poster</th>
+     </tr>
+   </thead>
+
+
+   <tbody>
+     <tr ng-repeat="oa in movieDataa | filter: test">
+   <td>{{oa.Title}}</td>
+   <td>{{oa.Year}}</td>
+   <td>{{oa.Runtime}}</td>
+   <td>{{oa.Director}}</td>
+    <td>{{oa.Language}}</td>
+
+   <td><img src={{oa.Poster}} alt="Movie Poster" style="height:100px; width:100px;"></td>
+    
+    <td><button type="button" ng-click="deletemovie(oa)" class="btn btn-danger">Delete</td>
+</tr>
+   </tbody>
+ </table>
+ </div>
+</div>
+
+</div>

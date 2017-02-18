@@ -1,0 +1,23 @@
+#color{
+	background-color: #C4BEBD;
+	border:1px solid black;
+	
+}
+div{
+
+	text-align: center;
+}
+
+h1,h3,h4
+{
+	font-family: calibri;
+}
+
+h3
+{
+	color: white;
+}
+h4{
+	font-weight:bold;
+}
+

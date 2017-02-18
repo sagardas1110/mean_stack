@@ -1,0 +1,71 @@
+<div class="container">
+	<h1 style="text-align:center;font-family:timesnewroman;font-weight:bold;">Select Theater and City For  {{moviename}}</h1><br><br>
+	<div class="row">
+		<div class="col-md-5">
+			<img src={{poster}} alt="" style="height:600px; width:400px;">
+		</div>
+		<div class="col-md-7">
+			<div  style="height:600px;">
+				<form >
+					<table>
+						<tr >
+							<td  id="detail">Title: {{moviename}}</td>
+						</tr>
+						<tr >
+							<td id="detail">Director: {{director}}</td>
+						</tr>
+						<tr>
+							<td id="detail">Runtime: {{runtime}}</td>
+						</tr>
+
+						<tr>
+							<td><hr id="hr"></td>
+						</tr>
+						<tr>
+							<td id="detail"><b>City:</b></td>
+							<td id="detail"><select ng-model="mappingdata.theatercity" style="width:220px;margin-left:40px;"> 
+					 		<option ng-repeat="t in mappingdata | unique:'theatercity'">{{t.theatercity}}</option> 
+					 		 </select>
+					 		</td>
+				</tr>
+						<tr>
+
+							<td id="detail"><b>Schedule Date:</b></td>
+							<td id="detail">
+								<select ng-model="mydate" style="width:220px;margin-left:40px;">		
+									<option ng-repeat="t in movdates">{{t | date:'yyyy-MM-dd'}}</option>
+					    </select>
+							</td>
+						</tr>
+						
+				
+					</table>
+					<br><br><br>
+					<table id="detail" class="table">
+						<thead>
+							
+						
+						<th>Theater Name</th>
+						<th>Time</th>
+						</thead>
+						<tbody>
+							<tr ng-show="mydate" ng-repeat="td in mappingdata| filter:mydate| filter:mappingdata.theatercity">
+							
+						
+								<td >{{td.theatername}}</td>
+								<td>
+							   <button ng-click="lock(td.Date,td.theatercity,td.theatername,td.Time)" class="btn btn-primary" style="width:120px; height:35px; font-size:19px;">
+							   	{{td.Time}}
+							   </button>
+								</td>
+							</tr>
+						</tbody>
+						
+
+					</table>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>

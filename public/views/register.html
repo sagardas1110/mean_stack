@@ -1,0 +1,69 @@
+<!-- <div class="col-md-4">
+  <h1>Register</h1>
+  <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+  <form class="form" ng-submit="register()">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" name="username" ng-model="registerForm.username" required>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+        <input type="password" class="form-control" name="password" ng-model="registerForm.password" required>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-default" ng-disabled="disabled">Register</button>
+      </div>
+  </form>
+</div>
+ -->
+
+
+ <div class="container">
+<div class="row">
+<br><br><br><br>
+    
+
+<div class="col-md-2"></div>
+<div class="col-md-8">
+
+
+    
+<div class="jumbotron" style="background-color:silver;border-radius:10px; height:450px;padding-top200px;">
+    
+
+    <p style="font-family:calibri; font-size:45px; border-bottom:1px solid black;"><b>Register</b>
+        <img src="img/ad.png" alt="Admin" style="position:relative; top:0px; left:350px; height:100px">
+    </p>
+<br>
+        <div style="padding-left:100px;padding-right:100px;">
+            
+         <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+         <form class="form" ng-submit="register()">
+        
+        <div class="form-group">
+            <label style="font-size:18px;">Username</label>
+            <input style="font-size:18px;" type="text" class="form-control" name="username" ng-model="registerForm.username" required>
+        </div>
+        <div class="form-group">
+            <label style="font-size:18px;">Password</label>
+            <input style="font-size:18px;" type="password" class="form-control" name="password" ng-model="registerForm.password" required>
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn" ng-disabled="disabled" style="background-color:blue;width:100px;"><a href="#/register" style="color:white;">Register</a></button>
+        </div>
+    </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="col-md-2"></div>
+</div>
+</div>
+    
+
+    
